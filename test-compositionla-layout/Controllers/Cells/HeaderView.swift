@@ -13,7 +13,7 @@ final class HeaderView: UICollectionReusableView {
        let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.adjustsFontForContentSizeCategory = true
-        view.font = UIFont.preferredFont(forTextStyle: .title3)
+        view.font = UIFont.boldSystemFont(ofSize: 24)
         view.textColor = .black
         return view
     }()
