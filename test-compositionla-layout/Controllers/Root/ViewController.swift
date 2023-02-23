@@ -39,6 +39,9 @@ final class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         prepare()
@@ -47,6 +50,8 @@ final class ViewController: UIViewController {
     // MARK: - Preparing Views
 
     private func prepare() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = "MyAlbum"
         view.backgroundColor = .white
         prepareCollectionView()
     }
@@ -57,7 +62,7 @@ final class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         let snapShot = snapshot()
